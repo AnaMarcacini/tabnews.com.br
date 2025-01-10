@@ -3,7 +3,7 @@
 ## Instalação:
 
 ```
-anahelena in GITs/AnaMarcacini/tabnews.com.br 
+anahelena in GITs/AnaMarcacini/tabnews.com.br
 ➜  nvm ls
        v18.20.5
 ->      v19.9.0
@@ -29,17 +29,16 @@ lts/jod -> v22.12.0 (-> N/A)
 
 Utilizaremos o `lts/hydrogen ` (lts = Long Term Support)
 
-nvm install lts/hydrogen 
+nvm install lts/hydrogen
 
-
-nvm alias default lts/hydrogen 
-
+nvm alias default lts/hydrogen
 
 .nvmrc -> arquivo com os detalhes da versão do node
 
 terminação rc -> Run Commands (ex bashrc)
 
 Esse arquivo facilita as instalações da versão da aplicaação
+
 ```
 ➜  nvm install
 Found '/home/anahelena/GITs/AnaMarcacini/tabnews.com.br/.nvmrc' with version <lts/hydrogen >
@@ -54,7 +53,7 @@ Vantagem de usar o Next.js
        Cuida do Limite entre o servidor e a aplicação do usuário
        Possui uma das melhores integrações entre o framework e Web Host
 
-Foi desenvolvido pela vercel que oferece hospedagens de sites 
+Foi desenvolvido pela vercel que oferece hospedagens de sites
 
 npm install next@13.1.6
 
@@ -66,12 +65,9 @@ npm install react-dom@18.2.0
 
 # Protocolos Web
 
-
 HTTP - hypertext transfer protocol - contem referencia para outros documentos
 FTP - tranferencia de arquivos
 SMTP - tranferencia de emails
-
-
 
 TCP X UDP
 
@@ -82,7 +78,7 @@ Arquivos com outro nome tipo ana.js vira uma rota pública a parte /ana
 
 ![alt text](src/image.png)
 
-usando  npm run dev no ambiente de desenvolvimento code spaces cria um link público só acessível pela sua conta do github
+usando npm run dev no ambiente de desenvolvimento code spaces cria um link público só acessível pela sua conta do github
 
 Para liberar o acesso
 
@@ -90,25 +86,21 @@ Para liberar o acesso
 
 ![alt text](src/image-2.png)
 
-
-
 # Git
 
-A cada commit o git guarda fotos do estado dos seus arquivos chamados 
+A cada commit o git guarda fotos do estado dos seus arquivos chamados
 Blob: binary large object
-
 
 Estados dos arquivos
 
-* Untracked
-* Modified
-* Staged
-* Commit
-
+- Untracked
+- Modified
+- Staged
+- Commit
 
 # Hospedagem
 
-oferecer abrigo 
+oferecer abrigo
 
 inicialmente no proprio pc -> quando desligava acabava energia dava ruim
 
@@ -117,14 +109,44 @@ depois passou a fazer deploy via ftp em pcs com redundância de internet e energ
 depois codava no proprio servidor via ssh -> problema de passar para o local
 
 utilizar o git em tudo no servidor, no local e no remoto :
-              local envia para o CI (Continue Integration) e realiza testes para ver se está tudo certo
-              caso esteja vai para um terceiro local para buildar 
-              e depois envia para o servidor
-
+local envia para o CI (Continue Integration) e realiza testes para ver se está tudo certo
+caso esteja vai para um terceiro local para buildar
+e depois envia para o servidor
 
 Habilitar o acesso da vercel
- -> configurações do git -> applications -> vercel
+-> configurações do git -> applications -> vercel
 
 ![alt text](src/vercel.png)
 
+# Baixando dependências só de desenvolvimento
 
+--D
+npm i prettier --D  
+no package.json
+"devDependencies": {
+"prettier": "^3.4.2"
+}
+lint -> analise estática de código
+
+add novo script de validação da formatação do código
+
+"scripts": {
+"dev": "next dev",
+"lint:check": "prettier --check ."
+},
+
+agora quando rodo
+
+npm run lint:check
+
+> tabnews.com.br@1.0.0 lint:check
+> prettier --check .
+
+Checking formatting...
+[warn] Notas Ana/Readme.md
+[warn] package.json
+[warn] pages/index.js
+[warn] Code style issues found in 3 files. Run Prettier with --write to fix.
+
+script para corrigir a formação
+"lint:fix": "prettier --write ."
