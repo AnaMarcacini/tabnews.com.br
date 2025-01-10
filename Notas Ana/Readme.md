@@ -89,3 +89,18 @@ Para liberar o acesso
 ![alt text](src/image-1.png)
 
 ![alt text](src/image-2.png)
+
+
+
+# Git
+
+A cada commit o git guarda fotos do estado dos seus arquivos chamados 
+Blob: binary large object
+
+
+Estados dos arquivos
+
+* Untracked
+* Modified
+* Staged
+* Commit
