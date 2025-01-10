@@ -104,3 +104,25 @@ Estados dos arquivos
 * Modified
 * Staged
 * Commit
+
+
+# Hospedagem
+
+oferecer abrigo 
+
+inicialmente no proprio pc -> quando desligava acabava energia dava ruim
+
+depois passou a fazer deploy via ftp em pcs com redundância de internet e energia para oferecer disponibilidade -> problema de versionamento
+
+depois codava no proprio servidor via ssh -> problema de passar para o local
+
+utilizar o git em tudo no servidor, no local e no remoto :
+              local envia para o CI (Continue Integration) e realiza testes para ver se está tudo certo
+              caso esteja vai para um terceiro local para buildar 
+              e depois envia para o servidor
+
+
+Habilitar o acesso da vercel
+ -> configurações do git -> applications -> vercel
+
+![alt text](src/vercel.png)
