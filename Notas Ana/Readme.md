@@ -150,3 +150,12 @@ Checking formatting...
 
 script para corrigir a formação
 "lint:fix": "prettier --write ."
+
+# DNS (Domain Name Service)
+
+![alt text](src/DNS.png)
+
+![alt text](src/RR.png)
+
+TTL : Time to Live -> cache
+![alt text](src/RR2.png)
