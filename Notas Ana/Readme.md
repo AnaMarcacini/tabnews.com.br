@@ -126,3 +126,5 @@ Habilitar o acesso da vercel
  -> configurações do git -> applications -> vercel
 
 ![alt text](src/vercel.png)
+
+

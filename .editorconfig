@@ -1,0 +1,5 @@
+root = true # o editor procura um arquivo desse tipo em sua posta se nn achar sobe para a pasta pai se não achar sobe para a pasta pai e faz isso até achar a pasta root 
+
+[*] # alterações se aplicam para todos os arquivos
+indent_style = space
+indent_size = 2 # a indentação é feita com 2 espaços 
