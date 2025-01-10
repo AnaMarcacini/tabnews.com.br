@@ -74,3 +74,18 @@ SMTP - tranferencia de emails
 
 
 TCP X UDP
+
+# Criando a estrutura do nosso app
+
+toda pagina index.js torna o diretório que a contém vira uma rota publica
+Arquivos com outro nome tipo ana.js vira uma rota pública a parte /ana
+
+![alt text](src/image.png)
+
+usando  npm run dev no ambiente de desenvolvimento code spaces cria um link público só acessível pela sua conta do github
+
+Para liberar o acesso
+
+![alt text](src/image-1.png)
+
+![alt text](src/image-2.png)
