@@ -159,3 +159,45 @@ script para corrigir a formação
 
 TTL : Time to Live -> cache
 ![alt text](src/RR2.png)
+
+registro.br -> cuida de todos os registros .br
+
+![alt text](src/FluxoInicio.png)
+
+![alt text](src/FluxoFim.png)
+
+![alt text](src/DominioVercel.png)
+
+![alt text](src/configurarServidorDNS.png)
+
+![alt text](src/alterarServiDNS.png)
+
+## Comando Dig
+
+sudo apt install dnsutils
+
+O comando dig (Domain Information Groper) é uma ferramenta de linha de comando usada para realizar **consultas ao DNS** (Domain Name System). Ele permite resolver nomes de domínio em endereços IP e vice-versa, além de obter informações detalhadas sobre registros DNS de um domínio.
+
+**Resolver nomes de domínio:**
+
+    dig google.com
+
+**Obter registros DNS específicos:** Você pode consultar diferentes tipos de registros DNS, como:
+
+    A (endereço IPv4)
+    AAAA (endereço IPv6)
+    MX (servidores de e-mail)
+    NS (servidores de nomes)
+    CNAME (nome canônico)
+    TXT (informações em texto)
+
+dig google.com MX
+
+**Consultar um servidor DNS específico:** Você pode especificar qual servidor DNS usar para a consulta.
+dig @8.8.8.8 google.com
+
+**Mostrar apenas a resposta (modo simplificado):**
+
+    dig +short google.com
+
+dig google.com +trace
