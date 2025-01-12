@@ -224,3 +224,27 @@ etc
   -> Realmente o produto finalizado e viável
 
 ![alt text](src/GráficoComplexidadeXtempo.png)
+
+## Testes automatizados
+
+Outros test runners
+
+Mocha - roda eles em serial
+Ava - Roda eles em paralelo (deteinar certos criterios para que 2 testes nn usem o mesmo trecho de código simultaneamente)
+PlayWrite - testes end to end (testes incluem a interface do usuário)
+Jets
+
+### Jets
+
+#### Instalação
+
+npm install --save-dev jest@29.6.2 (save-dev -> dependência de desenvolvimento)
+
+#### Execução
+
+    "test": "jest", -> executa eles uma vez
+    "test:watch": "jest --watch" -> fica executando e sempre que salva um arquivo (altera ele) reexecuta toda a bateria de testes criados
+
+os testes são uteis como documentação de sw mal documentados eles mostram as funções os parametros e o retorno esperado (como uma documentação faria).
+Existe uma tecnica de fazer o inverso (primeiro atira a flexa e depois coloca o alvo se chama)
+Ou seja elaborar primeiro os testes e depois implementar na função TDD -> Test Driven Development (desenvolvimento orientado a testes)
