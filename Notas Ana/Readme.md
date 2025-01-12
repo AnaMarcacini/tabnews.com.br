@@ -201,3 +201,26 @@ dig @8.8.8.8 google.com
     dig +short google.com
 
 dig google.com +trace
+
+# Disponibilidade da Aplicação
+
+SLA -> Service Level Agreement (Acordo de Nível de Serviço)
+
+AWS status
+Vercel status
+etc
+-> Ver dados do serviço e as vezes que o mesmo saiu do ar
+
+    Status Pages
+    Vercel: https://www.vercel-status.com/
+    AWS: https://health.aws.amazon.com/health/status
+    GitHub: https://www.githubstatus.com/
+
+# Arquitetura e Engenharia de Software
+
+- POC : Proof of Concept
+  -> provas que o conceito vai funcionar --> não funcional
+- MVP - Minimum Viable Product
+  -> Realmente o produto finalizado e viável
+
+![alt text](src/GráficoComplexidadeXtempo.png)
