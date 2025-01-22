@@ -437,3 +437,33 @@ anahelena in ~
 ## Versionamento da API
 
 ![alt text](src/VersionamentosApiTipos.png)
+
+# Banco de Dados
+
+- DBMS - Data Base Management System (sistema de gerenciamento de banco de dados (SGBD))
+  - MySQL
+  - PostgreSQL
+  - Oracle Database
+  - Microsoft SQL Server
+  - MongoDB
+  - .....
+- Query - Consultar
+  - ORM - Object-Relational Mapping
+  - SQL - Na mão
+  - CTE - Common Table Expression
+- Migrations
+
+TIPOS:
+
+- Relacional SQL - > SQL Structured Query Language
+- Não Relacional NoSQL
+  - Armazenamento de Documentos
+  - Armazenamento Chave:Valor
+- Serie Temporal
+- Espacial
+
+Escolhas do projeto
+
+- DBMS : PostgreSQL
+- Query : SQL - Na mão utilizando o conector pg
+- Migrations: node-pg-migrate
