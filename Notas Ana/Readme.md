@@ -66,10 +66,12 @@ npm install react-dom@18.2.0
 # Protocolos Web
 
 HTTP - hypertext transfer protocol - contem referencia para outros documentos
-FTP - tranferencia de arquivos
-SMTP - tranferencia de emails
+FTP - tranferência de arquivos
+SMTP - tranferência de emails
 
 TCP X UDP
+
+`WebSockets` -> Conexão Persistente
 
 # Criando a estrutura do nosso app
 
