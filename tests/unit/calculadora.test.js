@@ -5,7 +5,7 @@
 // Ou seja elaborar primeiro os testes e depois implementar na função
 // TDD -> Test Driven Development (desenvolvimento orientado a testes)
 
-const calculadora = require("../models/calculadora.js")
+const calculadora = require("../../models/calculadora.js")
 
 test("2+2=4", () => {
   const resultado = calculadora.somar(2, 2);

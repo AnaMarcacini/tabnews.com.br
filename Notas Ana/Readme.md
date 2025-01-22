@@ -227,20 +227,22 @@ etc
 
 ## Testes automatizados
 
-Outros test runners
+![alt text](src/piramideDeTestes.png)
+
+### test runners - testes de Unidade
 
 Mocha - roda eles em serial
 Ava - Roda eles em paralelo (deteinar certos criterios para que 2 testes nn usem o mesmo trecho de código simultaneamente)
 PlayWrite - testes end to end (testes incluem a interface do usuário)
 Jets
 
-### Jets
+#### Jets
 
-#### Instalação
+##### Instalação
 
 npm install --save-dev jest@29.6.2 (save-dev -> dependência de desenvolvimento)
 
-#### Execução
+##### Execução
 
     "test": "jest", -> executa eles uma vez
     "test:watch": "jest --watch" -> fica executando e sempre que salva um arquivo (altera ele) reexecuta toda a bateria de testes criados
@@ -248,3 +250,190 @@ npm install --save-dev jest@29.6.2 (save-dev -> dependência de desenvolvimento)
 os testes são uteis como documentação de sw mal documentados eles mostram as funções os parametros e o retorno esperado (como uma documentação faria).
 Existe uma tecnica de fazer o inverso (primeiro atira a flexa e depois coloca o alvo se chama)
 Ou seja elaborar primeiro os testes e depois implementar na função TDD -> Test Driven Development (desenvolvimento orientado a testes)
+
+# API (Application Programming Interface)
+
+## Interface gráfica X Interface Programatica (API)
+
+Interface Programática -> interface mais legível para programas (dados estruturados : json por exemplo)
+
+- sem layout
+- informação pura e organizada
+- interface que o robô ou script lê mais fácil
+
+Interface gráfica -> GUI Graphical User Interface
+Text-based User Interface -> TUI
+
+## debugar usando o curl Cliente URL
+
+anahelena in tabnews.com.br on  main [✘!?]
+➜ curl http://localhost:3000/api/status
+{"chave":"valor"}%
+
+```bash
+anahelena in tabnews.com.br on  main [✘!?]
+➜  curl http://localhost:3000/api/status -v
+*   Trying 127.0.0.1:3000...
+* Connected to localhost (127.0.0.1) port 3000 (#0)
+> GET /api/status HTTP/1.1
+> Host: localhost:3000
+> User-Agent: curl/7.84.0
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< ETag: "r9fdtfjb3oh"
+< Content-Length: 17
+< Vary: Accept-Encoding
+< Date: Wed, 22 Jan 2025 20:33:18 GMT
+< Connection: keep-alive
+< Keep-Alive: timeout=5
+<
+* Connection #0 to host localhost left intact
+{"chave":"valor"}%
+anahelena in tabnews.com.br on  main [✘!?]
+➜  curl http://localhost:3000/api/status --verbose
+
+# LINHAS DO QUE O CURL ESTÁ FAZENDO INTERNAMENTE
+*   Trying 127.0.0.1:3000...
+* Connected to localhost (127.0.0.1) port 3000 (#0)
+
+# O QUE FOI ENVIADO PARA O SERVIDOR
+> GET /api/status HTTP/1.1
+> Host: localhost:3000
+> User-Agent: curl/7.84.0
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+# RESPOSTA DO SERVIDOR
+< HTTP/1.1 200 OK
+< Content-Type: application/json; charset=utf-8
+< ETag: "r9fdtfjb3oh"
+< Content-Length: 17
+< Vary: Accept-Encoding
+< Date: Wed, 22 Jan 2025 20:33:44 GMT
+< Connection: keep-alive
+< Keep-Alive: timeout=5
+<
+* Connection #0 to host localhost left intact
+# CORPO DA REQUISIÇÃO
+{"chave":"valor"}%
+```
+
+```BASH
+anahelena in tabnews.com.br on  main [✘!?]
+➜  curl http://localhost:3000
+<!DOCTYPE html><html><head><style data-next-hide-fouc="true">body{display:none}</style><noscript data-next-hide-fouc="true"><style>body{display:block}</style></noscript><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills.js?ts=1737578259097"></script><script src="/_next/static/chunks/webpack.js?ts=1737578259097" defer=""></script><script src="/_next/static/chunks/main.js?ts=1737578259097" defer=""></script><script src="/_next/static/chunks/pages/_app.js?ts=1737578259097" defer=""></script><script src="/_next/static/chunks/pages/index.js?ts=1737578259097" defer=""></script><script src="/_next/static/development/_buildManifest.js?ts=1737578259097" defer=""></script><script src="/_next/static/development/_ssgManifest.js?ts=1737578259097" defer=""></script><noscript id="__next_css__DO_NOT_USE__"></noscript></head><body><div id="__next"><h1>Testes</h1></div><script src="/_next/static/chunks/react-refresh.js?ts=1737578259097"></script><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"development","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>%
+```
+
+Acessando o ip da vercel
+
+```
+anahelena in tabnews.com.br on  main [✘!?]
+➜ curl http://76.76.21.21
+Redirecting...
+anahelena in tabnews.com.br on  main [✘!?]
+➜ curl https://76.76.21.21
+curl: (60) SSL: no alternative certificate subject name matches target host name '76.76.21.21'
+More details here: https://curl.se/docs/sslcerts.html
+
+curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.
+anahelena in tabnews.com.br on  main [✘!?]
+➜ curl http://76.76.21.21 --insecure # esse comando ignora caso o ip não tenha certificado https geralmente associado ao nome de dominio
+Redirecting...
+```
+
+```
+anahelena in tabnews.com.br on  main [✘!?]
+➜  curl http://76.76.21.21 --insecure -v
+*   Trying 76.76.21.21:80...
+* Connected to 76.76.21.21 (76.76.21.21) port 80 (#0)
+> GET / HTTP/1.1
+> Host: 76.76.21.21
+> User-Agent: curl/7.84.0
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 308 Permanent Redirect
+< Content-Type: text/plain
+< Date: Wed, 22 Jan 2025 20:45:00 GMT
+< Location: https://vercel.com/
+< Refresh: 0;url=https://vercel.com/
+< Server: Vercel
+< X-Vercel-Id: gru1::x22lg-1737578700649-531331847b50
+< Transfer-Encoding: chunked
+<
+Redirecting...
+* Connection #0 to host 76.76.21.21 left intact
+```
+
+a resposta da vercel é um cabeçalho que pede para redirecionar para a pagina inicial dela teste no navegador
+
+Caso vc queria redirecionar o host para um especifico é preciso redirecionar do cabeçalho
+![alt text](src/redirecionandoParaODominioVercel.png)
+![alt text](src/respostaVercel.png)
+
+```bash
+anahelena in ~
+➜  curl https://76.76.21.21 --insecure -v --header "Host: anatabnews.vercel.app"
+*   Trying 76.76.21.21:443...
+* TCP_NODELAY set
+* Connected to 76.76.21.21 (76.76.21.21) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: /etc/ssl/certs/ca-certificates.crt
+  CApath: /etc/ssl/certs
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_128_GCM_SHA256
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: CN=no-sni.vercel-infra.com
+*  start date: Jan 16 16:15:00 2025 GMT
+*  expire date: Apr 16 16:14:59 2025 GMT
+*  issuer: C=US; O=Let's Encrypt; CN=R10
+*  SSL certificate verify ok.
+* Using HTTP2, server supports multi-use
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+* Using Stream ID: 1 (easy handle 0x55af2907f650)
+> GET / HTTP/2
+> Host: anatabnews.vercel.app
+> user-agent: curl/7.68.0
+> accept: */*
+>
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* Connection state changed (MAX_CONCURRENT_STREAMS == 250)!
+< HTTP/2 200
+< accept-ranges: bytes
+< access-control-allow-origin: *
+< age: 967
+< cache-control: public, max-age=0, must-revalidate
+< content-disposition: inline
+< content-type: text/html; charset=utf-8
+< date: Wed, 22 Jan 2025 20:57:16 GMT
+< etag: "e26aa6ece537a21023b3c9a5458dfff9"
+< last-modified: Wed, 22 Jan 2025 20:41:09 GMT
+< server: Vercel
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< x-matched-path: /
+< x-vercel-cache: HIT
+< x-vercel-id: gru1::dqzsn-1737579436986-33ed627d4895
+< content-length: 1135
+<
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-8a59928dc61557b6.js" defer=""></script><script src="/_next/static/chunks/framework-7ee2c06c72ba8a91.js" defer=""></script><script src="/_next/static/chunks/main-a0dca5a2ff5035f1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-df511a3677d160f6.js" defer=""></script><script src="/_next/static/chunks/pages/index-76ba89ae16e1ba47.js" defer=""></script><script src="/_next/static/BI9rU8YKlKeM3_tjWENMd/_buildManifest.js" defer=""></script><script src="/_next/static/BI9rU8YKlKeM3_tjWENMd/_ssgManifest.js" defer=""></script></head><body><div id="__next"><h1>Testes</h1></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"BI9rU8YK* Connection #0 to host 76.76.21.21 left intact
+```
+
+## Versionamento da API
+
+![alt text](src/VersionamentosApiTipos.png)
