@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    // apesar do js nn ser compilado e ts é e esse arquivo é uma herança do ts
+    "baseUrl": "."
+  }
+}
