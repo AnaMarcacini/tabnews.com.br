@@ -517,3 +517,9 @@ Adicionando manualmente
 `POSTGRES_PASSWORD=local_password npm run dev` a variavel de ambiente está salva apenas nessa execução e pode ser acessada usando no código `process.env.POSTGRES_PASSWORD` . Ao executar `npm run dev` no mesmo terminal dá erro.
 Outro problema desse metodo é que fica salvo o history !!! -> falta de segurança|| dados sensiveis
 Melhor utilizar o arquivo .env
+
+## Procedência das variaveis de Ambiente
+
+process.env -> painel da vercel Maior
+.env.development
+.env Menor
