@@ -252,7 +252,13 @@ npm install --save-dev jest@29.6.2 (save-dev -> dependência de desenvolvimento)
 
 os testes são uteis como documentação de sw mal documentados eles mostram as funções os parametros e o retorno esperado (como uma documentação faria).
 Existe uma tecnica de fazer o inverso (primeiro atira a flexa e depois coloca o alvo se chama)
-Ou seja elaborar primeiro os testes e depois implementar na função TDD -> Test Driven Development (desenvolvimento orientado a testes)
+Ou seja elaborar primeiro os testes e depois implementar na função TDD -> Test Driven Development (desenvolvimento orientado a testes) (red -> green -> refactor -> red ..... )
+
+## Padrões de Projeto
+
+### MVC
+
+Controller -> Model -> Controller -> View
 
 # API (Application Programming Interface)
 
@@ -470,6 +476,12 @@ Escolhas do projeto
 - DBMS : PostgreSQL
 - Query : SQL - Na mão utilizando o conector pg `➜  npm install pg@8.11.3`
 - Migrations: node-pg-migrate
+
+## Tipos de Querys
+
+- sem parâmetro
+- parâmetros fixos
+- parâmetro dinâmicos -> Queries Parametrizadas-> CUIDADO SQL Injection
 
 # Docker
 
