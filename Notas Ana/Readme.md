@@ -247,7 +247,8 @@ npm install --save-dev jest@29.6.2 (save-dev -> dependência de desenvolvimento)
 ##### Execução
 
     "test": "jest", -> executa eles uma vez
-    "test:watch": "jest --watch" -> fica executando e sempre que salva um arquivo (altera ele) reexecuta toda a bateria de testes criados
+    "test:watch": "jest --watch" -> fica executando e sempre que salva um arquivo (altera ele) reexecuta toda a bateria de testes criados (executa apenas os testes relacionado ao arquivo editado)
+    "test:watchAll": "jest --watchAll" -> fica executando e sempre que salva um arquivo (altera ele) reexecuta toda a bateria de testes criados (reexecuta todos os testes)
 
 os testes são uteis como documentação de sw mal documentados eles mostram as funções os parametros e o retorno esperado (como uma documentação faria).
 Existe uma tecnica de fazer o inverso (primeiro atira a flexa e depois coloca o alvo se chama)
