@@ -504,6 +504,10 @@ agora com o arquivo fora da raiz é necessário especificar o file no comando
 `docker compose -f infra/compose.yaml up -d`
 `docker compose -f infra/compose.yaml down`
 
+## automatizando subir o container
+
+"npm run services:up && next dev", -> se o primeiro comando tiver status ok o segundo executa
+
 # Aplicação
 
 Interface
@@ -523,3 +527,11 @@ Melhor utilizar o arquivo .env
 process.env -> painel da vercel Maior
 .env.development
 .env Menor
+
+# Fuzzy Search (busca difusa)
+
+no vscode vc pode procurar um arquivo que se assemelha ao que foi escrito
+wind+linux => ctrl+p
+mac => cmd+p
+
+nomeDoArquivo@conteudo-do-arquivo
