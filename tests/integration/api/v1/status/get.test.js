@@ -1,3 +1,4 @@
+
 // test("GET to /api/v1/status should return 200 hahahaha", () => {
 //   // const response = fetch("http://localhost:3000/api/v1/status")
 //   console.log(response) //Promise { <pending> } -> promessa que eu vou fazer no futuro

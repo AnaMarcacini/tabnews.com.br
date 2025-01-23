@@ -467,7 +467,7 @@ TIPOS:
 Escolhas do projeto
 
 - DBMS : PostgreSQL
-- Query : SQL - Na mão utilizando o conector pg
+- Query : SQL - Na mão utilizando o conector pg `➜  npm install pg@8.11.3`
 - Migrations: node-pg-migrate
 
 # Docker
@@ -503,3 +503,10 @@ docker compose down
 agora com o arquivo fora da raiz é necessário especificar o file no comando
 `docker compose -f infra/compose.yaml up -d`
 `docker compose -f infra/compose.yaml down`
+
+# Aplicação
+
+Interface
+Aplicação
+Persistência (memória)
+![alt text](src/back-end-stateless.png)
