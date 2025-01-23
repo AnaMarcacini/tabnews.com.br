@@ -495,3 +495,11 @@ postgres=# Select 1 + 1;
 postgres=# \q
 anahelena in tabnews.com.br on  main [⇡!?] took 18,2s
 ```
+
+docker compose down
+
+## Colocando o arquivo compose.yaml no dretório infra
+
+agora com o arquivo fora da raiz é necessário especificar o file no comando
+`docker compose -f infra/compose.yaml up -d`
+`docker compose -f infra/compose.yaml down`
