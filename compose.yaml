@@ -1,0 +1,12 @@
+# Yaml Ain't Markup Language
+# identação
+# alphine -> distro Linux extremamente enxuta
+# https://hub.docker.com/_/postgres
+services:
+  database:
+    image: "postgres:16.0-alpine3.18"
+    environment:
+      POSTGRES_PASSWORD: "local_password"
+    ports:
+      - "5435:5432"
+      #pc : docker

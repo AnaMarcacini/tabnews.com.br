@@ -433,7 +433,7 @@ anahelena in ~
 < x-vercel-id: gru1::dqzsn-1737579436986-33ed627d4895
 < content-length: 1135
 <
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-8a59928dc61557b6.js" defer=""></script><script src="/_next/static/chunks/framework-7ee2c06c72ba8a91.js" defer=""></script><script src="/_next/static/chunks/main-a0dca5a2ff5035f1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-df511a3677d160f6.js" defer=""></script><script src="/_next/static/chunks/pages/index-76ba89ae16e1ba47.js" defer=""></script><script src="/_next/static/BI9rU8YKlKeM3_tjWENMd/_buildManifest.js" defer=""></script><script src="/_next/static/BI9rU8YKlKeM3_tjWENMd/_ssgManifest.js" defer=""></script></head><body><div id="__next"><h1>Testes</h1></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"BI9rU8YK* Connection #0 to host 76.76.21.21 left intact
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-8a59928dc61557b6.js" defer=""></script><script src="/_next/static/chunks/framework-7ee2c06c72ba8a91.js" defer=""></script><script src="/_next/static/chunks/main-a0dca5a2ff5035f1.js" defer=""></script><script src="/_next/static/chunks/pages/_app-df511a3677d160f6.js" defer=""></script><script src="/_next/static/chunks/pages/index-76ba89ae16e1ba47.js" defer=""></script><script src="/_next/static/BI9rU8YKlKeM3_tjWENMd/_buildManifest.js" defer=""></script><script src="/_next/static/BI9rU8YKlKeM3_tjWENMd/_ssgManifest.js" defer=""></script></head><body><div id="__next"><h1>Testes</h1></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"BI9rU8YK* Connection #0 to host 76.76.21.21 left intact lKeM3_tjWENMd","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>%
 ```
 
 ## Versionamento da API
@@ -469,3 +469,29 @@ Escolhas do projeto
 - DBMS : PostgreSQL
 - Query : SQL - Na mão utilizando o conector pg
 - Migrations: node-pg-migrate
+
+# Docker
+
+docker compose up --detach -> subir sem preder o terminal = docker compose up -d
+docker compose up -d --force-recreate
+
+## Debug do docker do postgres
+
+sudo apt install postgresql-client
+
+```bash
+anahelena in tabnews.com.br on  main [⇡!?]
+➜  psql --host=localhost --username=postgres --port=5435
+Senha para o usuário postgres:
+psql (17.2 (Ubuntu 17.2-1.pgdg20.04+1), servidor 16.0)
+Digite "help" para obter ajuda.
+
+postgres=# Select 1 + 1;
+ ?column?
+----------
+        2
+(1 linha)
+
+postgres=# \q
+anahelena in tabnews.com.br on  main [⇡!?] took 18,2s
+```
