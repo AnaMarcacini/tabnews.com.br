@@ -9,6 +9,7 @@ async function query(queryObject) {
     //prop database, ela diz que é opcional, mas que quando não é passada o pg busca pela variável PGDATABASE e caso não encontre nada vai usar o mesmo valor defino para a prop user
     port: process.env.POSTGRES_PORT,
     password: process.env.POSTGRES_PASSWORD,
+    ssl: process.env.NODE_ENV !== "development", //error: connection is insecure (try using `sslmode=require`) process.env.NODE_ENV -> variavel padrão
   }
   );
   try {

@@ -548,3 +548,27 @@ wind+linux => ctrl+p
 mac => cmd+p
 
 nomeDoArquivo@conteudo-do-arquivo
+
+# Acesso dos Logs da Vercel
+
+![alt text](src/LogsVercel.png)
+![alt text](src/VariaveisDeAmbienteVercel.png)
+![alt text](src/VariaveisDeAmbienteVercel2.png)
+para a criação das variaveis de ambiente se aplicarem à ultima versão é preciso fazer o redeploy
+![alt text](src/Redeploy.png)
+Disparar o redeploy sem usar a webgui da vercel, no seu git você pode rodar git commit --allow-empty -m "Trigger redeploy" e git push é uma forma de enviar um commit vazio para o git e disparar o redeploy automático.
+
+# Neon
+
+- autoscaling -> puxar mais capacidade de processamento e memória de maneira automática
+- branching
+- bottomless storage -> armazenamento sem fundo
+
+  utiliza a connection string
+  postgresql://user:password@hostname:port/database?param-value
+  ou parameters only : variaveis diferentes como o .env
+
+comunicação usando SSL
+
+- Secure Sockets Layer
+- error: connection is insecure (try using `sslmode=require`)
