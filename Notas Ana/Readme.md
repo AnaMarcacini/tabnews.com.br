@@ -572,3 +572,14 @@ comunicação usando SSL
 
 - Secure Sockets Layer
 - error: connection is insecure (try using `sslmode=require`)
+
+## Certificados
+
+Self-signed certificate in certificate chain: certificado autoassinado na cadeia de certificados
+É preciso baixar o certificado que mostra a chave da assinatura
+
+Geralmente o backend pede uma compravação se o servidor e ele mesmo e o servidor manda ele assinado por uma autoridade responsável pela fiscalização
+Porém essa certificação foi assinada pelo proprio servidor assim é preciso ter o certificado dele instalado para comparar com a realidade
+
+![alt text](src/CertificadoServidor2.png)
+![alt text](src/CertificadoServidor.png)
