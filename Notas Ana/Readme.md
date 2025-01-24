@@ -478,7 +478,50 @@ Escolhas do projeto
 
 - DBMS : PostgreSQL
 - Query : SQL - Na mão utilizando o conector pg `➜  npm install pg@8.11.3`
-- Migrations: node-pg-migrate
+- Migrations: node-pg-migrate ➜ `npm i node-pg-migrate@6.2.2` (exclusivo do postgres -> vantagem de ser bem especifico e não ter problemas de migrações em troca da flexibilidade de se poder usar para qualquer outro DBMS)
+
+  "Why only Postgres? - By writing this migration tool specifically for postgres instead of accommodating many databases, we can actually provide a full featured tool that is much simpler to use and maintain. I was tired of using crippled database tools just in case one day we switch our database." - https://www.npmjs.com/package/node-pg-migrate
+
+obs o sequelize v6 é uma solução boa ORM que tem incluso um sistema de migrations
+--> criar migrações e executar elas
+
+## Migrations
+
+npm i node-pg-migrate@6.2.2
+
+npm run migrations:create first migration test
+
+cria arquivo TIMESTAMP_first-migration-test
+
+para criar a pasta num diretorio especifico
+
+"node-pg-migrate --migrations-dir infra/migrations create"
+
+OUUU
+
+"node-pg-migrate -m infra/migrations create"
+
+### fundamentos
+
+proibido alterações manuais
+crie um arquivo de migração
+up para fazer alterações exports.up = pgm => {}; // cria dados
+down para desfazer alterações exports.down = pgm => {}; //volta dados
+
+### Executar Migrations
+
+conectar com o db
+DATABASE_URL=postgres://postgres@localhost/database node-pg-migrate
+
+https://salsita.github.io/node-pg-migrate/cli
+
+ou
+
+If a .env file exists, it will be loaded using dotenv (if installed) when running the node-pg-migrate binary. If the .env file is not on the same level where the command has been called, you can use the --envPath option to point to the location of your .env file.
+
+npm install dotenv@16.4.4
+"node-pg-migrate --migrations-dir infra/migrations --envPath .env.development up"
+DATABASE_URL=postgres://local_user:local_password@localhost:5435/local_db
 
 ## Tipos de Querys
 
