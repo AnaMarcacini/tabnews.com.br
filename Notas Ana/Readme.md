@@ -460,9 +460,12 @@ anahelena in ~
   - ORM - Object-Relational Mapping
   - SQL - Na mão
   - CTE - Common Table Expression
-- Migrations
+- Migrations : como o git do banco de dados -> copia dos comandos e automações para o banco de dados
 
-TIPOS:
+  - Arquivos de migração: Ordem das alterações e alterações
+  - Framework de Migração: garante que os scripts sejam executados uma unica vez e sejam feitos na ordem
+
+    TIPOS:
 
 - Relacional SQL - > SQL Structured Query Language
 - Não Relacional NoSQL
