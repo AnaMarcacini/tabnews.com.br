@@ -24,7 +24,13 @@ async function status(request, response) {
 
   // const databaseOpenConnectionsResult = await database.query("Select * from pg_stat_activity WHERE datname = 'local_db';")
   // const databaseOpenConnectionsValue = databaseOpenConnectionsResult.rows.length;
-  const databaseOpenConnectionsResult = await database.query("Select count(*)::int from pg_stat_activity WHERE datname = 'local_db';") //fazer o database fzer o calculos necessários e me mandar a resposta
+
+  const databaseName = request.query.databaseName
+  console.log(databaseName)
+  const databaseOpenConnectionsResult = await database.query(
+    `Select count(*)::int from pg_stat_activity WHERE datname = '${databaseName}'`
+    // "Select count(*)::int from pg_stat_activity WHERE datname = '" + databaseName + "'"
+  ) //fazer o database fzer o calculos necessários e me mandar a resposta
   const databaseOpenConnectionsValue = databaseOpenConnectionsResult.rows[0].count;
   response.status(200).json({
     updated_at: updateAt,

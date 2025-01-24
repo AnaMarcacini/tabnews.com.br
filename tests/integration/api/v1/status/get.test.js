@@ -21,3 +21,18 @@ test("GET to /api/v1/status should return 200", async () => {
   expect(responseBody.dependecies.database.opened_connections).toEqual(1)
 })
 
+test.only("SQL Injection", async () => {
+  const response = await fetch("http://localhost:3000/api/v1/status?databaseName=local_db")//?queryParametres
+  const perigo = await fetch("http://localhost:3000/api/v1/status?databaseName='; SELECT pg_sleep(4);--")//?queryParametres //isso executa duas querys
+
+  // `Select count(*)::int from pg_stat_activity WHERE datname = '${databaseName}'` 
+
+  // `Select count(*)::int from pg_stat_activity WHERE datname = ''; SELECT pg_sleep(4);--"'` 
+
+  // `Select count(*)::int from pg_stat_activity WHERE datname = ''; uma
+  // SELECT pg_sleep(4);--"'` segunda mais um comentario sql --
+
+
+
+
+})
