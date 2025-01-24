@@ -25,10 +25,12 @@ async function status(request, response) {
   // const databaseOpenConnectionsResult = await database.query("Select * from pg_stat_activity WHERE datname = 'local_db';")
   // const databaseOpenConnectionsValue = databaseOpenConnectionsResult.rows.length;
 
-  const databaseName = request.query.databaseName
-  console.log(databaseName)
-  const databaseOpenConnectionsResult = await database.query(
-    `Select count(*)::int from pg_stat_activity WHERE datname = '${databaseName}'`
+  const databaseName = process.env.POSTGRES_DB
+  const databaseOpenConnectionsResult = await database.query({
+    text: "Select count(*)::int FROM pg_stat_activity WHERE datname = $1;",
+    values: [databaseName]
+  }// esse metodo de fazer querys evita de SQL Injection
+
     // "Select count(*)::int from pg_stat_activity WHERE datname = '" + databaseName + "'"
   ) //fazer o database fzer o calculos necessários e me mandar a resposta
   const databaseOpenConnectionsValue = databaseOpenConnectionsResult.rows[0].count;
