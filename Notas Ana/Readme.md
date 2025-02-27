@@ -246,6 +246,8 @@ npm install --save-dev jest@29.6.2 (save-dev -> dependência de desenvolvimento)
 
 ##### Execução
 
+CUIDADO ELE RODA EM PARALELO OS TESTES
+
     "test": "jest", -> executa eles uma vez
     "test:watch": "jest --watch" -> fica executando e sempre que salva um arquivo (altera ele) reexecuta toda a bateria de testes criados (executa apenas os testes relacionado ao arquivo editado)
     "test:watchAll": "jest --watchAll" -> fica executando e sempre que salva um arquivo (altera ele) reexecuta toda a bateria de testes criados (reexecuta todos os testes)
@@ -260,6 +262,16 @@ Para executar os testes dentro da pasta migrations é só passar o migrations co
  npm run test:watch -- migrations
 ```
 
+Para rodar apenas o arquivo tabnews.com.br/tests/integration/api/v1/migrations/post.test.js
+
+```bash
+npm run test:watch -- migrations/post
+
+# OU
+
+➜  npm run test:watch -- migrations.post # serve para qualquer SO Sist Operacional
+```
+
 Assim para ir qualquer pasta ou arquivo
 
 ```bash
@@ -269,6 +281,24 @@ Assim para ir qualquer pasta ou arquivo
 Se a pasta estiver em tests/migrations, você pode usar:
 
 jest --testPathPattern=tests/migrations
+
+###### direção
+
+https://octopus.com/blog/database-rollbacks-pitfalls
+
+https://nickcraver.com/blog/2016/05/03/stack-overflow-how-we-do-deployment-2016-edition/
+
+https://calpaterson.com/against-database-teardown.html
+
+https://news.ycombinator.com/item?id=29764792
+
+- up -> cria as coisas na ordem ROLLFORWARD
+
+  - ex : CREATE TABLE
+
+- down -> desfaz as coisas inversamente ROLLBACK|| Mais raros -> quase nunca podem ser usados || Pessima pratica, mais dificil de testar menos usado etc
+
+  - ex : DROP TABLE
 
 ## Padrões de Projeto
 
