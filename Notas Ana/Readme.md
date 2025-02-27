@@ -254,6 +254,22 @@ os testes são uteis como documentação de sw mal documentados eles mostram as 
 Existe uma tecnica de fazer o inverso (primeiro atira a flexa e depois coloca o alvo se chama)
 Ou seja elaborar primeiro os testes e depois implementar na função TDD -> Test Driven Development (desenvolvimento orientado a testes) (red -> green -> refactor -> red ..... )
 
+Para executar os testes dentro da pasta migrations é só passar o migrations como regex
+
+```bash
+ npm run test:watch -- migrations
+```
+
+Assim para ir qualquer pasta ou arquivo
+
+```bash
+ npm run test:watch -- path/to/folder
+```
+
+Se a pasta estiver em tests/migrations, você pode usar:
+
+jest --testPathPattern=tests/migrations
+
 ## Padrões de Projeto
 
 ### MVC
